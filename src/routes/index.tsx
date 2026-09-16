@@ -309,7 +309,7 @@ function Portfolio() {
 
           <Reveal delay={260}>
             <div className="mt-14 flex items-center gap-5">
-              <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-xl border border-border bg-secondary/40 sm:h-36 sm:w-36">
+              <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-2xl border border-border bg-secondary/40 sm:h-52 sm:w-52">
                 <img
                   src={portrait.url}
                   alt="Portrait of Sandeep Kumar, Electrical and Electronics Engineering student"
