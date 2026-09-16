@@ -156,20 +156,26 @@ const MARQUEE = [
   "Rekognition",
 ];
 
-function Stat({ value, suffix, label }: { value: number; suffix: string; label: string }) {
-  const { ref, visible } = useReveal<HTMLDivElement>(0.4);
-  const n = useCountUp(value, visible);
-  const decimals = value % 1 !== 0 ? 2 : 0;
-  return (
-    <div ref={ref} className="card-surface lift p-5">
-      <div className="font-mono text-3xl tracking-tight">
-        {n.toFixed(decimals)}
-        <span className="text-accent">{suffix}</span>
-      </div>
-      <p className="mt-1 text-xs text-muted-foreground">{label}</p>
-    </div>
-  );
-}
+const ACTIVITIES = [
+  {
+    org: "Hindi Literary Association",
+    role: "Management Lead",
+    detail:
+      "Managed team activities and supported planning and execution of association events.",
+  },
+  {
+    org: "Mharo Rajasthan Club",
+    role: "Management Lead",
+    detail:
+      "Coordinated club activities and worked with team members to organize events and initiatives.",
+  },
+  {
+    org: "Internshala",
+    role: "Campus Ambassador",
+    detail:
+      "Promoted Internshala opportunities among students and supported student engagement activities.",
+  },
+];
 
 function Nav() {
   const active = useActiveSection(NAV.map((n) => n.id));
