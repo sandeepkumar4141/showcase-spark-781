@@ -50,6 +50,7 @@ const NAV = [
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "credentials", label: "Credentials" },
+  { id: "activities", label: "Activities" },
   { id: "contact", label: "Contact" },
 ];
 
