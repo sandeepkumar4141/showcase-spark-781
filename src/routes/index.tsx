@@ -299,12 +299,24 @@ function Portfolio() {
             </div>
           </Reveal>
 
-          <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <Stat value={7.86} suffix="" label="CGPA · B.Tech EEE" />
-            <Stat value={4} suffix="+" label="Engineering projects" />
-            <Stat value={50} suffix="ms" label="Fault isolation time" />
-            <Stat value={98} suffix="%" label="IoT transmission rate" />
-          </div>
+          <Reveal delay={260}>
+            <div className="mt-14 flex items-center gap-5">
+              <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-xl border border-border bg-secondary/40 sm:h-36 sm:w-36">
+                <img
+                  src={portrait.url}
+                  alt="Portrait of Sandeep Kumar, Electrical and Electronics Engineering student"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="text-sm text-muted-foreground">
+                <p className="font-mono text-xs text-accent">Chennai, India</p>
+                <p className="mt-2 max-w-sm leading-relaxed">
+                  B.Tech EEE at VIT Chennai · Embedded systems, machine learning and AWS cloud.
+                </p>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
