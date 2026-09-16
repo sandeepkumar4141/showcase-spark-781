@@ -14,7 +14,8 @@ import {
   Brain,
 } from "lucide-react";
 import { Reveal, SectionHeading, SpotlightCard, Tag } from "@/components/portfolio/primitives";
-import { useActiveSection, useCountUp, useReveal } from "@/hooks/use-reveal";
+import { useActiveSection } from "@/hooks/use-reveal";
+import portrait from "@/assets/sandeep.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,6 +50,7 @@ const NAV = [
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "credentials", label: "Credentials" },
+  { id: "activities", label: "Activities" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -156,20 +158,26 @@ const MARQUEE = [
   "Rekognition",
 ];
 
-function Stat({ value, suffix, label }: { value: number; suffix: string; label: string }) {
-  const { ref, visible } = useReveal<HTMLDivElement>(0.4);
-  const n = useCountUp(value, visible);
-  const decimals = value % 1 !== 0 ? 2 : 0;
-  return (
-    <div ref={ref} className="card-surface lift p-5">
-      <div className="font-mono text-3xl tracking-tight">
-        {n.toFixed(decimals)}
-        <span className="text-accent">{suffix}</span>
-      </div>
-      <p className="mt-1 text-xs text-muted-foreground">{label}</p>
-    </div>
-  );
-}
+const ACTIVITIES = [
+  {
+    org: "Hindi Literary Association",
+    role: "Management Lead",
+    detail:
+      "Managed team activities and supported planning and execution of association events.",
+  },
+  {
+    org: "Mharo Rajasthan Club",
+    role: "Management Lead",
+    detail:
+      "Coordinated club activities and worked with team members to organize events and initiatives.",
+  },
+  {
+    org: "Internshala",
+    role: "Campus Ambassador",
+    detail:
+      "Promoted Internshala opportunities among students and supported student engagement activities.",
+  },
+];
 
 function Nav() {
   const active = useActiveSection(NAV.map((n) => n.id));
@@ -299,12 +307,24 @@ function Portfolio() {
             </div>
           </Reveal>
 
-          <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <Stat value={7.86} suffix="" label="CGPA · B.Tech EEE" />
-            <Stat value={4} suffix="+" label="Engineering projects" />
-            <Stat value={50} suffix="ms" label="Fault isolation time" />
-            <Stat value={98} suffix="%" label="IoT transmission rate" />
-          </div>
+          <Reveal delay={260}>
+            <div className="mt-14 flex items-center gap-5">
+              <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-xl border border-border bg-secondary/40 sm:h-36 sm:w-36">
+                <img
+                  src={portrait.url}
+                  alt="Portrait of Sandeep Kumar, Electrical and Electronics Engineering student"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="text-sm text-muted-foreground">
+                <p className="font-mono text-xs text-accent">Chennai, India</p>
+                <p className="mt-2 max-w-sm leading-relaxed">
+                  B.Tech EEE at VIT Chennai · Embedded systems, machine learning and AWS cloud.
+                </p>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -483,11 +503,29 @@ function Portfolio() {
         </div>
       </section>
 
+      {/* Activities */}
+      <section id="activities" className="scroll-mt-20 px-5 py-24">
+        <div className="mx-auto max-w-5xl">
+          <SectionHeading index="06" title="Extra-curricular activities" />
+          <div className="grid gap-4 md:grid-cols-3">
+            {ACTIVITIES.map((a, i) => (
+              <Reveal key={a.role} delay={i * 70}>
+                <SpotlightCard className="h-full">
+                  <p className="font-mono text-xs text-accent">{a.org}</p>
+                  <h3 className="mt-3 text-sm font-medium">{a.role}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.detail}</p>
+                </SpotlightCard>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="scroll-mt-20 px-5 py-24">
         <div className="mx-auto max-w-5xl">
           <SectionHeading
-            index="06"
+            index="07"
             title="Let's build something"
             subtitle="Available for internships and full-time roles in embedded systems, ML engineering and cloud."
           />
