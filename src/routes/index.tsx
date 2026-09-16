@@ -483,6 +483,24 @@ function Portfolio() {
         </div>
       </section>
 
+      {/* Activities */}
+      <section id="activities" className="scroll-mt-20 px-5 py-24">
+        <div className="mx-auto max-w-5xl">
+          <SectionHeading index="06" title="Extra-curricular activities" />
+          <div className="grid gap-4 md:grid-cols-3">
+            {ACTIVITIES.map((a, i) => (
+              <Reveal key={a.role} delay={i * 70}>
+                <SpotlightCard className="h-full">
+                  <p className="font-mono text-xs text-accent">{a.org}</p>
+                  <h3 className="mt-3 text-sm font-medium">{a.role}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.detail}</p>
+                </SpotlightCard>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="scroll-mt-20 px-5 py-24">
         <div className="mx-auto max-w-5xl">
