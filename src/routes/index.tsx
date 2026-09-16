@@ -14,7 +14,8 @@ import {
   Brain,
 } from "lucide-react";
 import { Reveal, SectionHeading, SpotlightCard, Tag } from "@/components/portfolio/primitives";
-import { useActiveSection, useCountUp, useReveal } from "@/hooks/use-reveal";
+import { useActiveSection } from "@/hooks/use-reveal";
+import portrait from "@/assets/sandeep.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
