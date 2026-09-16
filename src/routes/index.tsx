@@ -505,7 +505,7 @@ function Portfolio() {
       <section id="contact" className="scroll-mt-20 px-5 py-24">
         <div className="mx-auto max-w-5xl">
           <SectionHeading
-            index="06"
+            index="07"
             title="Let's build something"
             subtitle="Available for internships and full-time roles in embedded systems, ML engineering and cloud."
           />
