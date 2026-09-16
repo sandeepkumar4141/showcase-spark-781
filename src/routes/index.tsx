@@ -137,9 +137,17 @@ const SKILLS = [
 
 const CERTS = [
   { name: "Oracle Certified Java Foundations Associate", issuer: "Oracle", year: "Jul 2026" },
-  { name: "Data Analytics Job Simulation", issuer: "Deloitte Australia · Forage", year: "Jun 2026" },
+  {
+    name: "Data Analytics Job Simulation",
+    issuer: "Deloitte Australia · Forage",
+    year: "Jun 2026",
+  },
   { name: "Getting Started with Artificial Intelligence", issuer: "IBM", year: "May 2026" },
-  { name: "Unsupervised Machine Learning with Python", issuer: "ITRONIX Solutions", year: "Jun 2025" },
+  {
+    name: "Unsupervised Machine Learning with Python",
+    issuer: "ITRONIX Solutions",
+    year: "Jun 2025",
+  },
   { name: "Power BI Workshop", issuer: "OfficeMaster", year: "Mar 2026" },
 ];
 
@@ -162,8 +170,7 @@ const ACTIVITIES = [
   {
     org: "Hindi Literary Association",
     role: "Management Lead",
-    detail:
-      "Managed team activities and supported planning and execution of association events.",
+    detail: "Managed team activities and supported planning and execution of association events.",
   },
   {
     org: "Mharo Rajasthan Club",
@@ -197,9 +204,8 @@ function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "border-b border-border bg-background/70 backdrop-blur-xl" : ""
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${scrolled ? "border-b border-border bg-background/70 backdrop-blur-xl" : ""
+        }`}
     >
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-5">
         <a href="#top" className="font-mono text-sm tracking-tight">
@@ -210,11 +216,10 @@ function Nav() {
             <a
               key={item.id}
               href={`#${item.id}`}
-              className={`rounded-md px-3 py-1.5 text-sm transition-colors ${
-                active === item.id
-                  ? "bg-secondary/70 text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+              className={`rounded-md px-3 py-1.5 text-sm transition-colors ${active === item.id
+                ? "bg-secondary/70 text-foreground"
+                : "text-muted-foreground hover:text-foreground"
+                }`}
             >
               {item.label}
             </a>
@@ -229,7 +234,10 @@ function Nav() {
         </a>
       </div>
       <div className="h-px w-full bg-transparent">
-        <div className="h-px bg-accent transition-[width] duration-150" style={{ width: `${progress}%` }} />
+        <div
+          className="h-px bg-accent transition-[width] duration-150"
+          style={{ width: `${progress}%` }}
+        />
       </div>
     </header>
   );
@@ -258,71 +266,82 @@ function Portfolio() {
       <Nav />
 
       {/* Hero */}
-      <section className="relative overflow-hidden px-5 pt-32 pb-20">
-        <div aria-hidden className="grid-bg absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black,transparent_72%)]" />
-        <div className="relative mx-auto max-w-5xl">
-          <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-3 py-1 font-mono text-[11px] text-muted-foreground">
-              <span className="live-dot h-1.5 w-1.5 rounded-full bg-accent" />
-              Open to internships · 2027 graduate
-            </span>
-          </Reveal>
-          <Reveal delay={80}>
-            <h1 className="mt-6 text-4xl font-medium leading-[1.05] tracking-tight sm:text-6xl">
-              Sandeep Kumar
-            </h1>
-          </Reveal>
-          <Reveal delay={140}>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Electrical &amp; Electronics Engineering undergraduate at VIT Chennai. I build where
-              hardware meets intelligence — embedded systems, machine learning and cloud-native
-              pipelines that solve real engineering problems.
-            </p>
-          </Reveal>
-          <Reveal delay={200}>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a
-                href="#projects"
-                className="group inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5"
-              >
-                View projects
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-              <a
-                href={LINKEDIN}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm transition-colors hover:border-foreground/30"
-              >
-                <Linkedin className="h-4 w-4" /> LinkedIn
-              </a>
-              <a
-                href={GITHUB}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm transition-colors hover:border-foreground/30"
-              >
-                <Github className="h-4 w-4" /> GitHub
-              </a>
-            </div>
-          </Reveal>
+      <section className="relative overflow-hidden px-5 pt-32 pb-20 ">
+        <div
+          aria-hidden
+          className="grid-bg absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black,transparent_72%)]"
+        />
+        <div className=" gap-8 max-w-6xl justify-between mx-auto items-center flex flex-col md:flex-row">
+          <div className="relative  ">
+            {/* <Reveal> */}
+            {/*   <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-3 py-1 font-mono text-[11px] text-muted-foreground"> */}
+            {/*     <span className="live-dot h-1.5 w-1.5 rounded-full bg-accent" /> */}
+            {/*     Open to internships · 2027 graduate */}
+            {/*   </span> */}
+            {/* </Reveal> */}
+            <Reveal delay={80}>
+              <h1 className="mt-6 text-4xl font-medium leading-[1.05] tracking-tight sm:text-6xl">
+                Sandeep Kumar
+              </h1>
+            </Reveal>
+            <Reveal delay={140}>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Electrical &amp; Electronics Engineering undergraduate at VIT Chennai. I build where
+                hardware meets intelligence — embedded systems, machine learning and cloud-native
+                pipelines that solve real engineering problems.
+              </p>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="mt-8 flex flex-wrap items-center gap-3 ">
+                <a
+                  href={LINKEDIN}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm transition-colors hover:border-foreground/30"
+                >
+                  <Linkedin className="h-4 w-4" /> LinkedIn
+                </a>
+                <a
+                  href={GITHUB}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm transition-colors hover:border-foreground/30"
+                >
+                  <Github className="h-4 w-4" /> GitHub
+                </a>
+                <a
+                  href="#projects"
+                  className="group flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5 "
+                >
+                  View projects
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              </div>
+            </Reveal>
 
-          <Reveal delay={260}>
-            <div className="mt-14 flex items-center gap-5">
-              <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-2xl border border-border bg-secondary/40 sm:h-52 sm:w-52">
-                <img
-                  src={portrait.url}
-                  alt="Portrait of Sandeep Kumar, Electrical and Electronics Engineering student"
-                  className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="text-sm text-muted-foreground">
-                <p className="font-mono text-xs text-accent">Chennai, India</p>
-                <p className="mt-2 max-w-sm leading-relaxed">
-                  B.Tech EEE at VIT Chennai · Embedded systems, machine learning and AWS cloud.
-                </p>
-              </div>
+            {/* <Reveal delay={260}> */}
+            {/*   <div className="mt-14 flex items-center gap-5"> */}
+            {/*     <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-2xl border border-border bg-secondary/40 sm:h-52 sm:w-52"> */}
+            {/*       <img */}
+            {/*         src={"profile.webp"} */}
+            {/*         alt="Portrait of Sandeep Kumar, Electrical and Electronics Engineering student" */}
+            {/*         className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105" */}
+            {/*         loading="lazy" */}
+            {/*       /> */}
+            {/*     </div> */}
+            {/*     <div className="text-sm text-muted-foreground"> */}
+            {/*       <p className="font-mono text-xs text-accent">Chennai, India</p> */}
+            {/*       <p className="mt-2 max-w-sm leading-relaxed"> */}
+            {/*         B.Tech EEE at VIT Chennai · Embedded systems, machine learning and AWS cloud. */}
+            {/*       </p> */}
+            {/*     </div> */}
+            {/*   </div> */}
+            {/* </Reveal> */}
+          </div>
+
+          <Reveal delay={80}>
+            <div className="max-w-[340px] border-2 overflow-hidden rounded-2xl">
+              <img src="profile.webp" />
             </div>
           </Reveal>
         </div>
@@ -362,16 +381,14 @@ function Portfolio() {
             <Reveal delay={100}>
               <SpotlightCard>
                 <h3 className="text-sm font-medium">Education</h3>
-                <div className="mt-4 space-y-4 text-sm">
+                <div className="mt-4 space-y-4 text-sm ">
                   <div>
                     <p className="font-medium">Vellore Institute of Technology, Chennai</p>
-                    <p className="text-muted-foreground">B.Tech EEE · 7.86 CGPA</p>
-                    <p className="font-mono text-xs text-muted-foreground">2023 — 2027</p>
+                    <p className="text-muted-foreground">B.Tech EEE </p>
                   </div>
                   <div className="border-t border-border pt-4">
                     <p className="font-medium">Rajasthan Public Sr. Sec. School, Sikar</p>
                     <p className="text-muted-foreground">RBSE Class XII · 94%</p>
-                    <p className="font-mono text-xs text-muted-foreground">2021</p>
                   </div>
                 </div>
               </SpotlightCard>
@@ -432,10 +449,14 @@ function Portfolio() {
                       <span className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-secondary/50 transition-transform duration-500 group-hover:scale-110">
                         <Icon className="h-4 w-4 text-accent" />
                       </span>
-                      <span className="font-mono text-[11px] text-muted-foreground">{p.domain}</span>
+                      <span className="font-mono text-[11px] text-muted-foreground">
+                        {p.domain}
+                      </span>
                     </div>
                     <h3 className="mt-5 text-base font-medium">{p.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.summary}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {p.summary}
+                    </p>
                     <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                       {p.points.map((pt) => (
                         <li key={pt} className="flex gap-3">
